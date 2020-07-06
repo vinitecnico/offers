@@ -10,7 +10,7 @@ namespace LoanOffers.Infrastructure.ExternalServices
         {
             var result = new GetOfferByCpfResult
             {
-                Cpf = "123456",
+                Cpf = cpf,
                 Name = "jose testador"
             };
             
