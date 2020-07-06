@@ -1,0 +1,21 @@
+RUN dotnet test *.Tests.Unit/*.Tests.Unit.csproj \
+
+ARG PROJECT_NAME
+ARG SONAR_HOST
+ARG SONAR_TOKEN
+
+WORKDIR /src
+COPY ./src /src
+
+RUN dotnet sonarscanner begin /n:"$PROJECT_NAME" \
+ /k:"$PROJECT_NAME" \
+ /v:1.0 /d:sonar.host.url="$SONAR_HOST" \
+ /d:sonar.login="$SONAR_TOKEN" \
+ /d:sonar.cs.opencover.reportsPaths="/src/*.Tests.Unit/*.opencover.xml" \
+ /d:sonar.coverage.exclusions="**Tests*.cs"
+
+RUN dotnet build "LoanOffers.sln"
+ /p:CollectCoverage=true \
+ /p:CoverletOutputFormat=opencover
+
+RUN dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
