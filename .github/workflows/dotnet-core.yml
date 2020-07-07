@@ -22,4 +22,4 @@ jobs:
     - name: Build
       run:  dotnet build ./src/LoanOffers.sln --configuration Release --no-restore
     - name: Test
-      run:  dotnet test ./srs/LoanOffers.sln
+      run:  dotnet test ./src/LoanOffers.Tests.Unit/LoanOffers.Tests.Unit.csproj
