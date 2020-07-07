@@ -16,14 +16,10 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.101
-    - name: dir
-      run: cd src
-    - name: ls
-      run: ls   
+        dotnet-version: 3.1.101  
     - name: Install dependencies
       run:  dotnet restore ./src/LoanOffers.sln
     - name: Build
       run:  dotnet build ./src/LoanOffers.sln --configuration Release --no-restore
     - name: Test
-      run:  dotnet test ./srs/LoanOffers.sln --no-restore --verbosity normal
+      run:  dotnet test ./srs/LoanOffers.sln
