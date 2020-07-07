@@ -22,8 +22,8 @@ jobs:
     - name: ls
       run: ls   
     - name: Install dependencies
-      run:  dotnet restore "./srs/LoanOffers.sln"
+      run:  dotnet restore ./src/LoanOffers.sln
     - name: Build
-      run:  dotnet build "./srs/LoanOffers.sln" --configuration Release --no-restore
+      run:  dotnet build ./src/LoanOffers.sln --configuration Release --no-restore
     - name: Test
-      run:  dotnet test "./srs/LoanOffers.sln" --no-restore --verbosity normal
+      run:  dotnet test ./srs/LoanOffers.sln --no-restore --verbosity normal
