@@ -14,7 +14,7 @@ namespace LoanOffers.Tests.Unit.Api
     {
         [Theory]
         [InlineData("123456")]
-        public async Task ShouldReturnCustomer(){
+        public async Task ShouldReturnCustomer(string cpf){
             var expectedResult = new GetOfferByCpfResult
             {
                 Cpf = "123456",
@@ -25,7 +25,7 @@ namespace LoanOffers.Tests.Unit.Api
             mediatorMock.Setup(x => x.Send(It.IsAny<GetOfferByCpfCommand>(), CancellationToken.None)).ReturnsAsync(expectedResult);
 
             var controller = new WeatherForecastController(mediatorMock.Object);
-            var result = await controller.GetOfferByCpf(new GetOfferByCpfCommand {CPF = "123456"});
+            var result = await controller.GetOfferByCpf(new GetOfferByCpfCommand {CPF = cpf});
 
             var okObjectResult = result as OkObjectResult;
             var okResult = okObjectResult.Value as GetOfferByCpfResult;
