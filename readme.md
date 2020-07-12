@@ -8,7 +8,7 @@ dotnet run
 Swagger:
 
 ```
-https://localhost:5001/swagger/index.html
+https://localhost:5001/index.html
 ```
 
 ## Test coverage
