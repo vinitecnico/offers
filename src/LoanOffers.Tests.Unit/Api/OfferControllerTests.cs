@@ -14,7 +14,7 @@ namespace LoanOffers.Tests.Unit.Api
     {
         [Theory]
         [InlineData("123456")]
-        public async Task ShouldReturnCustomer(string cpf){
+        public async Task ShouldReturnCustomer(){
             var expectedResult = new GetOfferByCpfResult
             {
                 Cpf = "123456",
