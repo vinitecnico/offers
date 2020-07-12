@@ -24,7 +24,7 @@ namespace LoanOffers.Tests.Unit.Domain
             offerServiceMock.Setup(x => x.GetOfferByCpf(It.IsAny<string>())).ReturnsAsync(expectedResult);
 
             var getOfferByCpfHandler = new GetOfferByCpfHandler(offerServiceMock.Object);
-            var result = await getOfferByCpfHandler.Handle(new GetOfferByCpfCommand { Cpf = "123456" }, CancellationToken.None);
+            var result = await getOfferByCpfHandler.Handle(new GetOfferByCpfCommand { CPF = "123456" }, CancellationToken.None);
 
             Assert.Equal(expectedResult.Cpf, result.Cpf);
         }

@@ -14,7 +14,7 @@ namespace LoanOffers.Infrastructure.ExternalServices
                 Name = "jose testador"
             };
             
-            return result;
+            return await Task.FromResult(result);
         }
     }
 }

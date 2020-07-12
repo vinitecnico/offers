@@ -19,7 +19,7 @@ namespace LoanOffers.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("offers/{cpf}")]
+        [HttpGet("offers/{CPF}")]
         public async Task<IActionResult> GetOfferByCpf([FromRoute]GetOfferByCpfCommand command)
         {
             var result = await _mediator.Send(command);

@@ -25,7 +25,7 @@ namespace LoanOffers.Tests.Unit.Api
             mediatorMock.Setup(x => x.Send(It.IsAny<GetOfferByCpfCommand>(), CancellationToken.None)).ReturnsAsync(expectedResult);
 
             var controller = new WeatherForecastController(mediatorMock.Object);
-            var result = await controller.GetOfferByCpf(new GetOfferByCpfCommand {Cpf = "123456"});
+            var result = await controller.GetOfferByCpf(new GetOfferByCpfCommand {CPF = "123456"});
 
             var okObjectResult = result as OkObjectResult;
             var okResult = okObjectResult.Value as GetOfferByCpfResult;

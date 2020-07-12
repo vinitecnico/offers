@@ -31,10 +31,10 @@ docker build -f ci/Dockerfile.build -t netcoreoffer .
 Run build image:
 
 ```
-Docker run -d -p 8080:80  netcoreoffer
+docker run -d -p 8080:80  netcoreoffer
 ```
 
 Swagger run docker:
 ```
-http://localhost:8080/swagger/index.html
+http://localhost:8080/index.html
 ```

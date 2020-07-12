@@ -3,8 +3,8 @@ using LoanOffers.Domain.Models;
 
 namespace LoanOffers.Domain.Commands
 {
-    public class GetOfferByCpfCommand: IRequest<GetOfferByCpfResult>
+    public class GetOfferByCpfCommand : IRequest<GetOfferByCpfResult>
     {
-        public string Cpf { get; set; }
+        public string CPF { get; set; }
     }
 }

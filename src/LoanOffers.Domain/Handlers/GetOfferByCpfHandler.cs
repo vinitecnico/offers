@@ -17,7 +17,7 @@ namespace LoanOffers.Domain.Handlers
 
         public async Task<GetOfferByCpfResult> Handle(GetOfferByCpfCommand request, CancellationToken cancellationToken)
         {
-            return await _offerService.GetOfferByCpf(request.Cpf);
+            return await _offerService.GetOfferByCpf(request.CPF);
         }
     }
 }

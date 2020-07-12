@@ -70,6 +70,7 @@ namespace LoanOffers.Api
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "testJokenpo");
+                c.RoutePrefix = string.Empty;
             });
         }
     }
